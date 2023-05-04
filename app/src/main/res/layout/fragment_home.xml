@@ -23,7 +23,7 @@
             android:gravity="center" />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/btnLogin"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
@@ -34,10 +34,10 @@
             android:textSize="30sp"></Button>
 
         <Button
-            android:id="@+id/createAccount"
+            android:id="@+id/btnCreateAccount"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/login"
+            android:layout_below="@+id/btnLogin"
             android:layout_centerInParent="true"
             android:text="@string/create_account"
             android:textSize="30sp"></Button>
