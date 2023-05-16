@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:text="AGENDA MEDICA"
             android:textSize="30sp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/btnLogin"

@@ -1,63 +1,57 @@
 package bootcamp.cl.proyecto_agenda
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.databinding.FragmentHomeBinding
 
 
-class Home : Fragment() {
+class Home : Fragment(R.layout.fragment_home) {
 
-    private lateinit var dataBinding: FragmentHomeBinding
+
+    private lateinit var binding: FragmentHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        dataBinding= DataBindingUtil.setContentView(Activity(), R.layout.fragment_home)
 
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState);
 
-        var btnLogin:Button = dataBinding.btnLogin
-        var btnCreateAccount:Button = dataBinding.btnCreateAccount
+        var btnLogin: Button = binding.btnLogin
+        var btnCreateAccount: Button = binding.btnCreateAccount
 
-        val navControler:NavController = Navigation.findNavController(view)
 
         btnLogin.setOnClickListener {
-
-
-                navControler.navigate(R.id.login2)
-
+            findNavController().navigate(R.id.action_home2_to_login2)
         }
 
         btnCreateAccount.setOnClickListener {
 
-            navControler.navigate(R.id.createAccount2)
+            Toast.makeText(context, "Me hicieron click", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_home2_to_createAccount2)
 
         }
 
 
     }
 
-    companion object {
-    }
 }
