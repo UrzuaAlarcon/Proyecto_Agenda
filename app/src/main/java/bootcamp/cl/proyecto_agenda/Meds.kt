@@ -1,4 +1,8 @@
 package bootcamp.cl.proyecto_agenda
 
-class Meds {
+class Meds() {
+
+    var drugName = ""
+    var docis = ""
+
 }
