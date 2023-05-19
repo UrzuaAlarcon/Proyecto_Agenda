@@ -35,17 +35,12 @@ class Home : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState);
 
-        var btnLogin: Button = binding.btnLogin
         var btnCreateAccount: Button = binding.btnCreateAccount
 
 
-        btnLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_home2_to_login2)
-        }
 
         btnCreateAccount.setOnClickListener {
 
-            Toast.makeText(context, "Me hicieron click", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_home2_to_createAccount2)
 
         }

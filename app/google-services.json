@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1067988238161",
+    "project_id": "healthier-b6b53",
+    "storage_bucket": "healthier-b6b53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067988238161:android:a4789c7a0d040de9a8dd70",
+        "android_client_info": {
+          "package_name": "bootcamp.cl.proyecto_agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067988238161-cae14kpq3tu4m39m9m1ne0a1em43md0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCly8ORAmCYTq20ffoXqLwLFoRsDN2PH0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067988238161-cae14kpq3tu4m39m9m1ne0a1em43md0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,20 +11,24 @@
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_home2_to_login2"
-            app:destination="@id/login2" />
-        <action
             android:id="@+id/action_home2_to_createAccount2"
             app:destination="@id/createAccount2" />
+        <action
+            android:id="@+id/action_home2_to_main_Fragment2"
+            app:destination="@id/main_Fragment2" />
     </fragment>
     <fragment
         android:id="@+id/createAccount2"
         android:name="bootcamp.cl.proyecto_agenda.UI.CreateAccount"
         android:label="CreateAccount"
-        tools:layout="@layout/fragment_create_account"/>
+        tools:layout="@layout/fragment_create_account">
+        <action
+            android:id="@+id/action_createAccount2_to_main_Fragment2"
+            app:destination="@id/main_Fragment2" />
+    </fragment>
     <fragment
-        android:id="@+id/login2"
-        android:name="bootcamp.cl.proyecto_agenda.UI.Login"
-        android:label="Login"
-        tools:layout="@layout/fragment_login"/>
+        android:id="@+id/main_Fragment2"
+        android:name="bootcamp.cl.proyecto_agenda.UI.Main_Fragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
