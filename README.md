@@ -13,7 +13,7 @@ salud. Esa carpeta llena de papeles representa la historia médica de una person
 sistema que solo entrega ordenes y citas sin preocuparse del tiempo de las personas, sin preocuparse si 
 la persona recuerda asistir a la cita, sin preocuparse de si hay hora a examenes antes de la hora a 
 control medico.
-Es asi que nace una ides... una applicacion de agenda medica que permita remplazar la vieja carpeta y 
+Es asi que nace una idea... una applicacion de agenda medica que permita remplazar la vieja carpeta y 
 entregar un orden a esos datos en papel, es asi que nace HEALTHIER. 
 
 Healthier es una app de registros medicos que permite almacenar y mostrar informacion relevante a los pacientes
