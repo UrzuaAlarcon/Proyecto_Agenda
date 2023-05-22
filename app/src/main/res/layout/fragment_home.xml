@@ -7,26 +7,18 @@
     </data>
 
     <LinearLayout
+
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/fondohome">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_alignParentTop="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="AGENDA MEDICA"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:onClick="onButtonClick"/>
-
-
-            <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilSingInUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="300dp"
                 app:helperText="@string/user"
                android:layout_marginLeft="10dp"
                 app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />

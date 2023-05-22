@@ -32,14 +32,15 @@ class CreateAccount : Fragment() {
 
             if (binding.userEmail.text!!.isNotEmpty() && binding.userPassword.text!!.isNotEmpty()){
 
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.userEmail.text.
-                toString(), binding.userPassword.text.toString())
+                FirebaseAuth.getInstance()
+                    .createUserWithEmailAndPassword(binding.userEmail.text.toString(),
+                        binding.userPassword.text.toString())
 
                 findNavController().navigate(R.id.action_createAccount2_to_main_Fragment2)
 
             }else{
 
-                Toast.makeText(Activity(), "Algo ha salido mal", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Algo ha salido mal", Toast.LENGTH_SHORT).show()
             }
 
 
