@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bootcamp.cl.proyecto_agenda.Adapters.RecyclerOptionAdapter
@@ -17,9 +18,9 @@ import bootcamp.cl.proyecto_agenda.databinding.FragmentMainBinding
 
 class Main_Fragment : Fragment() {
 
-    private lateinit var binding:FragmentMainBinding
+    private lateinit var binding: FragmentMainBinding
     private lateinit var recyclerOptionsMenu: RecyclerView
-    private val layoutManager by lazy { LinearLayoutManager(context) }
+    private val layoutManager by lazy { GridLayoutManager(context,2,RecyclerView.VERTICAL,true) }
     private val listofOptions by lazy { getOptionsFromProvider() }
     private lateinit var adapterOptions: RecyclerOptionAdapter
 
@@ -30,21 +31,21 @@ class Main_Fragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        binding = FragmentMainBinding.inflate(inflater,container,false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
 
         recyclerOptionsMenu = binding.recyclerMain
 
         setRecyclerView()
 
-        return  binding.root
+        return binding.root
     }
 
-    private fun setRecyclerView(){
+    private fun setRecyclerView() {
 
         recyclerOptionsMenu.setHasFixedSize(true)
         recyclerOptionsMenu.itemAnimator = DefaultItemAnimator()
-        recyclerOptionsMenu.layoutManager= layoutManager
-        adapterOptions = (RecyclerOptionAdapter (listofOptions, object : RecyclerMenu{
+        recyclerOptionsMenu.layoutManager = layoutManager
+        adapterOptions = (RecyclerOptionAdapter(listofOptions, object : RecyclerMenu {
 
 
             override fun onClick(opction: Option, position: Int) {
@@ -57,18 +58,18 @@ class Main_Fragment : Fragment() {
 
         }))
 
-            adapterOptions.notifyDataSetChanged()
+        adapterOptions.notifyDataSetChanged()
         recyclerOptionsMenu.adapter = adapterOptions
 
 
-        }
     }
+}
 
-private fun getOptionsFromProvider():MutableList<Option>{
+private fun getOptionsFromProvider(): MutableList<Option> {
 
     var listOptions = OptionProvider.listOfOptions
 
-    return  listOptions
+    return listOptions
 }
 
 

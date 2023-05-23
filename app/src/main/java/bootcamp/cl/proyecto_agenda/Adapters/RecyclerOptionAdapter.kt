@@ -17,7 +17,7 @@ Adapter<RecyclerOptionAdapter.ViewHolderOption>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecyclerOptionAdapter.ViewHolderOption {
+    ):ViewHolderOption {
 
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemMenuLayoutBinding.inflate(inflater, parent, false)
