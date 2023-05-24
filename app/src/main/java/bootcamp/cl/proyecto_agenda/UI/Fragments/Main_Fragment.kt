@@ -19,11 +19,6 @@ import bootcamp.cl.proyecto_agenda.databinding.FragmentMainBinding
 class Main_Fragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
-    private lateinit var recyclerOptionsMenu: RecyclerView
-    private val layoutManager by lazy { GridLayoutManager(context,2,RecyclerView.VERTICAL,true) }
-    private val listofOptions by lazy { getOptionsFromProvider() }
-    private lateinit var adapterOptions: RecyclerOptionAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,43 +28,11 @@ class Main_Fragment : Fragment() {
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        recyclerOptionsMenu = binding.recyclerMain
-
-        setRecyclerView()
 
         return binding.root
     }
-
-    private fun setRecyclerView() {
-
-        recyclerOptionsMenu.setHasFixedSize(true)
-        recyclerOptionsMenu.itemAnimator = DefaultItemAnimator()
-        recyclerOptionsMenu.layoutManager = layoutManager
-        adapterOptions = (RecyclerOptionAdapter(listofOptions, object : RecyclerMenu {
-
-
-            override fun onClick(opction: Option, position: Int) {
-                Toast.makeText(context, "En implementacion", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onDelete(opction: Option, position: Int) {
-                Toast.makeText(context, "En implementacion", Toast.LENGTH_SHORT).show()
-            }
-
-        }))
-
-        adapterOptions.notifyDataSetChanged()
-        recyclerOptionsMenu.adapter = adapterOptions
-
-
-    }
 }
 
-private fun getOptionsFromProvider(): MutableList<Option> {
 
-    var listOptions = OptionProvider.listOfOptions
-
-    return listOptions
-}
 
 
