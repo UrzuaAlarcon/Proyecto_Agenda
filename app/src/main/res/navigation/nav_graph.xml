@@ -30,5 +30,14 @@
         android:id="@+id/main_Fragment2"
         android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.Main_Fragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_Fragment2_to_medsFragment"
+            app:destination="@id/medsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medsFragment"
+        android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.MedsFragment"
+        android:label="MedsFragment"
+        tools:layout="@layout/fragment_meds"/>
 </navigation>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.Fragments.MedsFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleMeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddMeds"
+            tools:listitem="@layout/item_meds_layout"/>
+
+        <Button
+            android:id="@+id/btnAddMeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnDeleteMeds"
+            android:text="@string/add_meds"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/btnDeleteMeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/delete_meds"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

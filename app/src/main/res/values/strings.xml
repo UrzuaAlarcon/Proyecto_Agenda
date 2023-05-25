@@ -18,4 +18,8 @@
     <string name="citas_medicas">Citas medicas</string>
     <string name="citas_a_examenes">Citas a examenes</string>
     <string name="indicaciones">Indicaciones</string>
+    <string name="nombre_medicamento">Nombre medicamento</string>
+    <string name="indication_example">Indicaciones</string>
+    <string name="add_meds">Agregar medicamento</string>
+    <string name="delete_meds">Eliminar medicamento</string>
 </resources>
