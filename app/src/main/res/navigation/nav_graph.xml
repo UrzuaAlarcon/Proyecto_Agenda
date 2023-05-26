@@ -34,10 +34,22 @@
         <action
             android:id="@+id/action_main_Fragment2_to_medsFragment"
             app:destination="@id/medsFragment" />
+        <action
+            android:id="@+id/action_main_Fragment2_to_home2"
+            app:destination="@id/home2" />
     </fragment>
     <fragment
         android:id="@+id/medsFragment"
         android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.MedsFragment"
         android:label="MedsFragment"
-        tools:layout="@layout/fragment_meds"/>
+        tools:layout="@layout/fragment_meds">
+        <action
+            android:id="@+id/action_medsFragment_to_newMedFragment"
+            app:destination="@id/newMedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMedFragment"
+        android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.NewMedFragment"
+        android:label="NewMedFragment"
+        tools:layout="@layout/fragment_new_med"/>
 </navigation>

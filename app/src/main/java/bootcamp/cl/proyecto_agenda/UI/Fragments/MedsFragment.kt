@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,16 +44,32 @@ class MedsFragment : Fragment() {
         recyclerMeds = binding.recycleMeds
 
         setRecyclerView()
-
-
         return binding.root
+
+
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnAddMeds.setOnClickListener {
+
+            findNavController().navigate(R.id.action_medsFragment_to_newMedFragment)
+        }
+
+    }
 
     private fun setRecyclerView(){
 
         recyclerMeds.setHasFixedSize(true)
         recyclerMeds.itemAnimator = DefaultItemAnimator()
+
+       /* if (layoutManager == null){
+            recyclerMeds.layoutManager = layoutManager
+        }else{
+
+            //hacer algo aqui para volver a la vista anterior
+        }*/
         recyclerMeds.layoutManager = layoutManager
         adapterMeds = (RecyclerMedsAdapter(listOfMeds, object : RecyclerMeds {
             override fun onClick(meds: Meds, position: Int) {
@@ -80,6 +97,8 @@ class MedsFragment : Fragment() {
         return listMeds
 
     }
+
+
 
 
 }
