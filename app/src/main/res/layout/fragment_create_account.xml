@@ -10,7 +10,8 @@
 
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fondolayout">
     <LinearLayout
 
 
@@ -50,27 +51,14 @@
             android:id="@+id/tilBirthDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:helperText="Fecha de nacimiento"
+            app:helperText="Edad"
             app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userBirthDay"
+            android:id="@+id/userAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:helperText="Telefono"
-            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone" />
+            android:inputType="number" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"

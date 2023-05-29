@@ -1,7 +1,6 @@
 package bootcamp.cl.proyecto_agenda.Provider
 
 import bootcamp.cl.proyecto_agenda.Models.Meds
-import bootcamp.cl.proyecto_agenda.Models.Option
 
 class MedsProvider {
 
@@ -9,19 +8,19 @@ class MedsProvider {
 
         val listOfMeds = mutableListOf<Meds>(
 
-            Meds(
+            Meds(1,
                 "Losartan",
-            "1 comprimido de 50 mg cada 12 horas (mañana y noche)"
+            "1 comprimido de 50 mg cada 12 horas (mañana y noche)",
+                1
             ),
 
             Meds(
+                2,
                 "Metformina",
 
-                "2 comprimidos de 850 mg al dia, antes del almuerzo y antes d ela cena"
+                "2 comprimidos de 850 mg al dia, antes del almuerzo y antes d ela cena",
+                1
             )
-
-
-
 
         )
 

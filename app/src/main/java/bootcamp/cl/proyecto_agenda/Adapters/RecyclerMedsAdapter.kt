@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerMeds
 import bootcamp.cl.proyecto_agenda.Models.Meds
-import bootcamp.cl.proyecto_agenda.Models.Option
 import bootcamp.cl.proyecto_agenda.databinding.ItemMedsLayoutBinding
-import com.squareup.picasso.Picasso
 
 class RecyclerMedsAdapter(
     private val listMeds: List<Meds>,

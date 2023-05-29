@@ -23,4 +23,5 @@
     <string name="indication_example">Indicaciones</string>
     <string name="add_meds">Agregar medicamento</string>
     <string name="delete_meds">Eliminar medicamento</string>
+    <string name="agregar">Agregar</string>
 </resources>

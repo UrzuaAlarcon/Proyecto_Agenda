@@ -81,7 +81,7 @@ class Home : Fragment(R.layout.fragment_home) {
                 if (it.isSuccessful) {
                     val UID = it.result.user?.uid
 
-                    saveLogInUser(UID)
+                    saveLogInUserSession(UID)
 
                     findNavController().navigate(R.id.action_home2_to_main_Fragment2)
 
@@ -94,7 +94,7 @@ class Home : Fragment(R.layout.fragment_home) {
     }
 
     //guardar el login del user en un shared preferences
-    private fun saveLogInUser(UID:String?){
+    private fun saveLogInUserSession(UID:String?){
 
         val preferences = context?.getSharedPreferences(getString
             (R.string.preferences_file),Context.MODE_PRIVATE)?.edit()

@@ -23,15 +23,10 @@ class MedsFragment : Fragment() {
 
     private lateinit var binding:FragmentMedsBinding
     private lateinit var recyclerMeds: RecyclerView
-    private val layoutManager by lazy { LinearLayoutManager(context) }
     private val listOfMeds by lazy {getMedsFromProvider()}
     private lateinit var adapterMeds: RecyclerMedsAdapter
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,14 +58,6 @@ class MedsFragment : Fragment() {
 
         recyclerMeds.setHasFixedSize(true)
         recyclerMeds.itemAnimator = DefaultItemAnimator()
-
-       /* if (layoutManager == null){
-            recyclerMeds.layoutManager = layoutManager
-        }else{
-
-            //hacer algo aqui para volver a la vista anterior
-        }*/
-        recyclerMeds.layoutManager = layoutManager
         adapterMeds = (RecyclerMedsAdapter(listOfMeds, object : RecyclerMeds {
             override fun onClick(meds: Meds, position: Int) {
                 Toast.makeText(activity, "En implementacion", Toast.LENGTH_SHORT).show()
