@@ -15,6 +15,7 @@ import bootcamp.cl.proyecto_agenda.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    var context = this
     lateinit var navController: NavController
     lateinit var binding:ActivityMainBinding
 

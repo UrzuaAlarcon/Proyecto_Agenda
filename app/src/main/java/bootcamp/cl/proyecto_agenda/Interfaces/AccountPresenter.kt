@@ -7,10 +7,9 @@ interface AccountPresenter {
 
     fun createNewAccount(
         mail: String?,
-        password: String?,
-        showAlert: Unit, navController: NavController, view : View
-    ):Boolean
+        password: String?, navController: NavController, view : View
+    )
 
-    fun saveSessionState(UID: String?)
+    fun saveSessionState(uid: String?)
 
 }
