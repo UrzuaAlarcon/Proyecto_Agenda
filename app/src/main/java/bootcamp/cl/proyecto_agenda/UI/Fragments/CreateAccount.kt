@@ -7,21 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import bootcamp.cl.proyecto_agenda.AgendaApp
-import bootcamp.cl.proyecto_agenda.Models.User
+import bootcamp.cl.proyecto_agenda.Interfaces.AccountPresenter
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
-import java.sql.Date
 
 class CreateAccount : Fragment() {
     lateinit var binding: FragmentCreateAccountBinding
+    private val presenter = CreateAccountPresenter()
 
-    val app = requireContext().applicationContext as AgendaApp
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,72 +37,83 @@ class CreateAccount : Fragment() {
 
         binding.btnSaveCreateAccount.setOnClickListener {
 
-            if (binding.userEmail.text!!.isNotEmpty() && binding.userPassword.text!!.isNotEmpty()) {
-                FirebaseAuth.getInstance()
-                    .createUserWithEmailAndPassword(
-                        binding.userEmail.text.toString(),
-                        binding.userPassword.text.toString()
-                    ).addOnCompleteListener {
+            presenter.createNewAccount(
+                binding.userEmail.text.toString(),
+                binding.userPassword.text.toString(),
+                showAlert(),
+                findNavController(),
+                view
+            )
 
-                        if (it.isSuccessful) {
-                            val UID = it.result.user?.uid
+            if(presenter.authResult){
 
-                            saveCreatedUserSession(UID)
+                findNavController().navigate(R.id.action_createAccount2_to_main_Fragment2)
 
-                          //  createNewUser()
+                //no esta navegando
 
-                            findNavController().navigate(R.id.action_createAccount2_to_main_Fragment2)
-                        } else {
-                            showAlert()
-                        }
-                    }
-            } else {
-
+            }else{
                 showAlert()
             }
-
-            //Agregar usuario a la base de datos
-
-            //crear un hilo para las acciones con la base de datos
-
-            /*lifecycleScope.launch(Dispatchers.IO){
-
-                app.room.userDao().insertUser()
-
-            }*/
-
-
-
         }
     }
 
-    private fun saveCreatedUserSession(UID:String?){
+    private fun saveCreatedUserSession(UID: String?) {
 
-        val preferences = context?.getSharedPreferences(getString
-            (R.string.preferences_file), Context.MODE_PRIVATE)?.edit()
-        preferences?.putString("UID" , UID.toString())
+        val preferences = context?.getSharedPreferences(
+            getString
+                (R.string.preferences_file), Context.MODE_PRIVATE
+        )?.edit()
+        preferences?.putString("UID", UID.toString())
         preferences?.apply()
     }
-    private fun showAlert(){
+
+    private fun showAlert() {
 
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Error")
         builder.setMessage("Error al intentar registrar al usuario")
         builder.setPositiveButton("Aceptar", null)
-        val dialog:AlertDialog = builder.create()
+        val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+}
 
-/*    private fun createNewUser( name:String, mail:String, age:Int):User{
 
-        var newUser = User(id = null,name = binding.userName.text.toString(),
-            mail = binding.userEmail.text.toString(), age = binding.userAge.text.toString().toInt())
+class CreateAccountPresenter() : AccountPresenter {
 
-        return newUser
+    var authResult = false
+    override fun createNewAccount(
+        mail: String?,
+        password: String?,
+        showAlert: Unit,
+        navController: NavController,
+        view: View
+    ): Boolean {
 
-    }*/
+        view.findViewTreeLifecycleOwner()?.lifecycleScope?.launch(IO){
+
+            if (!mail.isNullOrEmpty() && !password.isNullOrEmpty()) {
+                FirebaseAuth.getInstance()
+                    .createUserWithEmailAndPassword(
+                        mail,
+                        password
+                    ).addOnSuccessListener {
+                            authResult = true
+                            val uid = it.user?.uid
+                    }
+            }
+        }
+
+        return authResult
+
+    }
+
+    override fun saveSessionState(UID: String?) {
+        TODO("Not yet implemented")
+    }
 
 }
+
 
 
 
