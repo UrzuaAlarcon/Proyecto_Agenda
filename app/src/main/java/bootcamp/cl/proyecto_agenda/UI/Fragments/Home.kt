@@ -10,13 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import bootcamp.cl.proyecto_agenda.Presenters.HomePresenterIMPL
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentHomeBinding
 
 import com.google.firebase.auth.FirebaseAuth
 
 
-class Home : Fragment(R.layout.fragment_home) {
+class Home() : Fragment(R.layout.fragment_home) {
 
 
     private lateinit var binding: FragmentHomeBinding
@@ -48,6 +49,8 @@ class Home : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState);
 
+        val presenter = HomePresenterIMPL(this)
+
 
         binding.btnCreateAccount.setOnClickListener {
 
@@ -57,41 +60,15 @@ class Home : Fragment(R.layout.fragment_home) {
 
         binding.btnLogin.setOnClickListener {
 
-            if (binding.singInUserName.text!!.isNotEmpty() &&
-                binding.SingInUserPassword.text!!.isNotEmpty()) {
+            presenter.singIn(
+                binding.singInUserName.text.toString(),
+                binding.SingInUserPassword.text.toString(),
+                findNavController(),
+                view)
 
-                singIn()
-
-              } else {
-
-                showAlert()
-            }
         }
     }
 
-    //singIn con usuario registrado de firebase
-    private fun singIn(){
-
-        FirebaseAuth.getInstance()
-            .signInWithEmailAndPassword(
-                binding.singInUserName.text.toString(),
-                binding.SingInUserPassword.text.toString()
-            ).addOnCompleteListener {
-
-                if (it.isSuccessful) {
-                    val UID = it.result.user?.uid
-
-                    saveLogInUserSession(UID)
-
-                    findNavController().navigate(R.id.action_home2_to_main_Fragment2)
-
-                } else {
-
-                    showAlert()
-
-                }
-            }
-    }
 
     //guardar el login del user en un shared preferences
     private fun saveLogInUserSession(UID:String?){
@@ -100,16 +77,6 @@ class Home : Fragment(R.layout.fragment_home) {
             (R.string.preferences_file),Context.MODE_PRIVATE)?.edit()
         preferences?.putString("UID" , UID.toString())
         preferences?.apply()
-    }
-
-    private fun showAlert(){
-
-        val builder = AlertDialog.Builder(context)
-        builder.setTitle("Error")
-        builder.setMessage("Error de autenticacion")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
     }
 
 }

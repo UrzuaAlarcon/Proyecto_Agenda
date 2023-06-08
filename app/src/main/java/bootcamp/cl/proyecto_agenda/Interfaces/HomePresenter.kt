@@ -3,11 +3,13 @@ package bootcamp.cl.proyecto_agenda.Interfaces
 import android.view.View
 import androidx.navigation.NavController
 
-interface AccountPresenter {
+interface HomePresenter {
 
-    fun createNewAccount(
+    fun singIn(
         mail: String?,
-        password: String?, navController: NavController, view : View
+        password: String?,
+        navController: NavController,
+        view: View
     )
 
     fun saveSessionState(uid: String?)

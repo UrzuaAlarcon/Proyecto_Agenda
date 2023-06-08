@@ -37,8 +37,8 @@ class RecyclerMedsAdapter(
 
         fun bind(meds: Meds) {
 
-            binding.MedName.text = meds.MedsName
-            binding.MedIndication.text = meds.MedsIndication
+            binding.MedName.text = meds.medsName
+            binding.MedIndication.text = meds.medsIndication
 
             binding.root.setOnClickListener {
 

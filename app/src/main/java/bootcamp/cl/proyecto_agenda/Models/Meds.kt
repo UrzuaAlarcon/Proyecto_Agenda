@@ -17,7 +17,7 @@ import androidx.room.PrimaryKey
 data class Meds(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    var MedsName: String,
-    var MedsIndication: String,
+    var medsName: String,
+    var medsIndication: String,
     val userId: Int
 )
