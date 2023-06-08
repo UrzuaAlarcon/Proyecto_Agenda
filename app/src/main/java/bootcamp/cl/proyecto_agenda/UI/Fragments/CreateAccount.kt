@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.Presenters.CreateAccountPresenter
 import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
@@ -23,6 +24,8 @@ class CreateAccount : Fragment() {
         return binding.root
 
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

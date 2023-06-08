@@ -12,20 +12,17 @@ import bootcamp.cl.proyecto_agenda.Models.User
 interface UserDao {
 
     @Query("SELECT *  FROM Users")
-    suspend fun getAll():MutableList<User>
+    suspend fun getAll(): MutableList<User>
 
     @Query("SELECT * FROM Users WHERE id = :id")
-    suspend fun getAllById(id:Int):User
-
-    @Query("SELECT name FROM Users WHERE id = :id ")
-    suspend fun getNameById(id: Int):User
+    suspend fun getAllById(id: Int): User
 
     @Insert
     suspend fun insertUser(user: User)
 
     @Delete
-    suspend fun deleteUser(user:User)
+    suspend fun deleteUser(user: User)
 
     @Update
-    suspend fun updateUser(user:User)
+    suspend fun updateUser(user: User)
 }

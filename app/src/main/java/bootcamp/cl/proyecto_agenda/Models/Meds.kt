@@ -4,20 +4,11 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(
-    "Meds", foreignKeys =
-    [ForeignKey(
-        User::class,
-        ["id"],
-        ["userId"],
-        ForeignKey.CASCADE
-    )
-    ]
-)
+@Entity()
 data class Meds(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
     var medsName: String,
     var medsIndication: String,
-    val userId: Int
+    val userId: Int=0
 )

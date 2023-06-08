@@ -8,22 +8,21 @@ import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.Models.User
 
 @Database(
-    entities = [User::class, Meds::class],
+    entities = [Meds::class],
     version = 1
 )
 
 abstract class AgendaDb: RoomDatabase(){
 
-    abstract fun userDao():UserDao
 
     abstract fun medsDao(): MedsDao
 
-    /*companion object{
+    companion object{
 
         @Volatile
         private var INSTANCE:AgendaDb? = null
 
-        fun getDataBase(context: Context): AgendaDb?{
+        fun getDataBase(context: Context): AgendaDb{
 
             val instanceDataBase = INSTANCE
             if (instanceDataBase != null){
@@ -34,16 +33,16 @@ abstract class AgendaDb: RoomDatabase(){
 
                 val instance = Room.databaseBuilder(context.applicationContext,
                     AgendaDb::class.java,
-                    "agendaDataBAse").build()
+                    "AgendaDataBase").build()
 
                 INSTANCE = instance
 
             }
 
-            return INSTANCE
+            return INSTANCE!!
 
         }
 
-    }*/
+    }
 
 }

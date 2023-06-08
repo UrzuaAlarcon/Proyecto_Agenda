@@ -18,9 +18,6 @@ interface MedsDao {
     @Query("SELECT * FROM Meds WHERE id = :id")
     suspend fun getAllById(id:Int): MutableList<Meds>
 
-    @Query("SELECT medsName FROM Meds WHERE id = :id ")
-    suspend fun getMedsNameById(id: Int): MutableList<Meds>
-
     @Insert
     suspend fun insertMeds(meds: Meds)
 

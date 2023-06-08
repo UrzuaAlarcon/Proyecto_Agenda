@@ -68,15 +68,4 @@ class Home() : Fragment(R.layout.fragment_home) {
 
         }
     }
-
-
-    //guardar el login del user en un shared preferences
-    private fun saveLogInUserSession(UID:String?){
-
-        val preferences = context?.getSharedPreferences(getString
-            (R.string.preferences_file),Context.MODE_PRIVATE)?.edit()
-        preferences?.putString("UID" , UID.toString())
-        preferences?.apply()
-    }
-
 }

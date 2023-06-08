@@ -38,7 +38,7 @@
             android:inputType="textNoSuggestions" />
 
         <Button
-            android:id="@+id/addNewMed"
+            android:id="@+id/btnAddNewMed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/agregar"
