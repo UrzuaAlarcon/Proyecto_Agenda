@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity()
+@Entity
 data class Meds(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,

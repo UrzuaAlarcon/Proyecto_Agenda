@@ -37,6 +37,13 @@ class NewMedFragment : Fragment() {
                 binding.newMedName.text.toString(),
                 binding.newMedIndication.text.toString()
             )
+
+            binding.newMedName.text?.clear()
+            binding.newMedIndication.text?.clear()
+
+            presenter.showAlert()
+
+
             runBlocking {
                 Log.i("pruebas", "onViewCreated: ${presenter.getAllMeds(newMedDao)}")
             }

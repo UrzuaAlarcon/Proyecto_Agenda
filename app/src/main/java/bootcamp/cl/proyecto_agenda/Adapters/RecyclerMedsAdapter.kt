@@ -8,7 +8,7 @@ import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.databinding.ItemMedsLayoutBinding
 
 class RecyclerMedsAdapter(
-    private val listMeds: List<Meds>,
+    private var listMeds: MutableList<Meds>,
     private val medsListener: RecyclerMeds
 ) : RecyclerView.Adapter<RecyclerMedsAdapter.ViewHolderMeds>() {
 
@@ -31,6 +31,25 @@ class RecyclerMedsAdapter(
         holder.bind(meds)
 
     }
+
+    fun add(meds: Meds) {
+        listMeds.add(meds)
+        notifyDataSetChanged()
+    }
+
+    fun remove(adapterPosition: Int) {
+        listMeds.removeAt(adapterPosition)
+        notifyItemChanged(adapterPosition)
+        notifyDataSetChanged()
+    }
+
+    fun setMedsList(planets: MutableList<Meds>) {
+
+        listMeds = planets
+        notifyDataSetChanged()
+
+    }
+
 
     inner class ViewHolderMeds(private val binding: ItemMedsLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
