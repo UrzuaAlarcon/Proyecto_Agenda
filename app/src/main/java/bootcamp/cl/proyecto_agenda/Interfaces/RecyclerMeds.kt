@@ -7,5 +7,4 @@ interface RecyclerMeds {
     fun onClick(meds: Meds, position: Int)
     //fun onDelete(meds: Meds, position: Int)
 
-
 }

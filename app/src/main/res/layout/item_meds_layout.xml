@@ -7,10 +7,11 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/medsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:focusable="true"
+        android:clickable="true"
         app:cardCornerRadius="15dp"
         android:layout_margin="4dp"
         android:layout_marginBottom="4dp"
@@ -40,6 +41,14 @@
                 android:textSize="25dp"
                 android:textColor="@color/white"
                 android:text="@string/indication_example"/>
+
+            <ImageButton
+                android:id="@+id/btnDeleteMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/_delete"
+                android:backgroundTint="@color/greenLayout"/>
 
 
         </LinearLayout>

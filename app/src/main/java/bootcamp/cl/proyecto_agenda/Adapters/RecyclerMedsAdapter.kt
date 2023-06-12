@@ -43,6 +43,19 @@ class RecyclerMedsAdapter(
         notifyDataSetChanged()
     }
 
+    fun deleteMeds(meds: Meds){
+
+        val index = listMeds.lastIndexOf(meds)
+        if (index != -1) {
+
+            listMeds.removeAt(index)
+            notifyItemChanged(index)
+            notifyDataSetChanged()
+
+        }
+
+    }
+
     fun setMedsList(planets: MutableList<Meds>) {
 
         listMeds = planets
@@ -59,17 +72,10 @@ class RecyclerMedsAdapter(
             binding.MedName.text = meds.medsName
             binding.MedIndication.text = meds.medsIndication
 
-            binding.root.setOnClickListener {
+            binding.btnDeleteMed.setOnClickListener {
 
                 medsListener.onClick(meds, adapterPosition)
             }
-
- /*           binding.btnDelete.setOnClickListener {
-
-                medsListener.onDelete(meds, adapterPosition)
-
-            }*/
-
 
         }
 
