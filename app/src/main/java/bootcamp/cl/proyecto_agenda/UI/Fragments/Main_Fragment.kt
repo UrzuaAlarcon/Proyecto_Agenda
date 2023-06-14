@@ -2,14 +2,11 @@ package bootcamp.cl.proyecto_agenda.UI.Fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.OnBackPressedDispatcher
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentMainBinding
@@ -45,19 +42,23 @@ class Main_Fragment : Fragment() {
 
         binding.btnTestAppointments.setOnClickListener {
 
-            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT)
+                .show()
 
         }
 
         binding.btnPrescriptions.setOnClickListener {
 
-            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT)
+                .show()
         }
 
         binding.btnLogOut.setOnClickListener {
 
-            val preferences = context?.getSharedPreferences(getString
-                (R.string.preferences_file), Context.MODE_PRIVATE)?.edit()
+            val preferences = context?.getSharedPreferences(
+                getString
+                    (R.string.preferences_file), Context.MODE_PRIVATE
+            )?.edit()
             preferences?.clear()
             preferences?.apply()
 

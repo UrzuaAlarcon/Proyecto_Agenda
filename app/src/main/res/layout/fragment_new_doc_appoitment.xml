@@ -51,7 +51,9 @@
             android:id="@+id/newDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textNoSuggestions" />
+            android:inputType="textNoSuggestions"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilTime"
