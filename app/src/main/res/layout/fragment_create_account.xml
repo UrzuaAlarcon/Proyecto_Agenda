@@ -21,18 +21,7 @@
         android:orientation="vertical"
         android:padding="@dimen/common_padding_default">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:helperText="Nombre"
-            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilMail"
@@ -46,19 +35,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilBirthDay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:helperText="Edad"
-            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"

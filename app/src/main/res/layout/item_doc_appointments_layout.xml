@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/DocAppointmentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="4dp"
+        android:foreground="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/greenLayout">
+
+            <TextView
+                android:id="@+id/DoctorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/nombre_del_profecional"/>
+
+            <TextView
+                android:id="@+id/Specialty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/especialidad"/>
+
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/fecha"/>
+
+            <TextView
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/hora"/>
+
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/ubicacion"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnDeleteMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/_delete"
+                android:backgroundTint="@color/greenLayout"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

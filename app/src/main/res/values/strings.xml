@@ -24,4 +24,11 @@
     <string name="add_meds">Agregar medicamento</string>
     <string name="delete_meds">Eliminar medicamento</string>
     <string name="agregar">Agregar</string>
+    <string name="agregar_nueva_cita">Agregar nueva cita</string>
+    <string name="nombre_del_profecional">Nombre del profecional</string>
+    <string name="especialidad">Especialidad</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="ubicacion">Ubicacion</string>
+    <string name="en_implementacion">En implementacion</string>
 </resources>

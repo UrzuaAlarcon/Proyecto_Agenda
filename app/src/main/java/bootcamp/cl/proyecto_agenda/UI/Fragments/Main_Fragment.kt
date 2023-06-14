@@ -38,6 +38,22 @@ class Main_Fragment : Fragment() {
             findNavController().navigate(R.id.action_main_Fragment2_to_medsFragment)
         }
 
+        binding.btnAppointments.setOnClickListener {
+
+            findNavController().navigate(R.id.action_main_Fragment2_to_docAppointmentsFragment)
+        }
+
+        binding.btnTestAppointments.setOnClickListener {
+
+            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+
+        }
+
+        binding.btnPrescriptions.setOnClickListener {
+
+            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+        }
+
         binding.btnLogOut.setOnClickListener {
 
             val preferences = context?.getSharedPreferences(getString

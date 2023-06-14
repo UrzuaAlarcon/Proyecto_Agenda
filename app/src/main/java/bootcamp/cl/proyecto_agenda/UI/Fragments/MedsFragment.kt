@@ -6,26 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.compose.ui.platform.AndroidUiDispatcher.Companion.Main
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bootcamp.cl.proyecto_agenda.Adapters.RecyclerMedsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.MedsDao
 import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerMeds
 import bootcamp.cl.proyecto_agenda.Models.Meds
-import bootcamp.cl.proyecto_agenda.Provider.MedsProvider
-import bootcamp.cl.proyecto_agenda.Provider.MedsProvider.Companion.listOfMeds
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentMedsBinding
-import bootcamp.cl.proyecto_agenda.databinding.ItemMedsLayoutBinding
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
@@ -63,6 +54,7 @@ class MedsFragment : Fragment() {
         }
     }
 
+
     private fun setRecyclerView(medsDao: MedsDao) {
 
         recyclerMeds.setHasFixedSize(true)
@@ -73,7 +65,7 @@ class MedsFragment : Fragment() {
 
                 val medsDao = agendaDb.medsDao()
 
-                showDeleteAlert(medsDao,meds)
+                deleteMedAlert(medsDao,meds)
 
             }
         }))
@@ -93,7 +85,7 @@ class MedsFragment : Fragment() {
 
     }
 
-    private fun showDeleteAlert(medsDao: MedsDao, meds: Meds) {
+    private fun deleteMedAlert(medsDao: MedsDao, meds: Meds) {
 
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Borrar")
