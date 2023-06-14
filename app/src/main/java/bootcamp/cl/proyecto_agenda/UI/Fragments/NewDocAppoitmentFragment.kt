@@ -40,8 +40,6 @@ class NewDocAppoitmentFragment : Fragment() {
     }
 
     private fun onDateSelected(day:Int, month:Int, year:Int){
-
         binding.newDate.setText("$day / $month / $year")
-
     }
 }
