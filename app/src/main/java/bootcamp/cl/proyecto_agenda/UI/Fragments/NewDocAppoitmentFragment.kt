@@ -31,6 +31,24 @@ class NewDocAppoitmentFragment : Fragment() {
             showDatePickerDialog()
 
         }
+
+        binding.newTime.setOnClickListener {
+
+            showTimePickerDialog()
+
+        }
+    }
+
+    private fun showTimePickerDialog() {
+
+        val timePicker = TimePickerFragment {onTimeSelected(it)}
+        timePicker.show(childFragmentManager, "Time")
+    }
+
+    private fun onTimeSelected(time:String){
+
+        binding.newTime.setText("hora: $time")
+
     }
 
     private fun showDatePickerDialog() {
@@ -40,6 +58,6 @@ class NewDocAppoitmentFragment : Fragment() {
     }
 
     private fun onDateSelected(day:Int, month:Int, year:Int){
-        binding.newDate.setText("$day / $month / $year")
+        binding.newDate.setText("Fecha: $day / $month / $year")
     }
 }

@@ -66,7 +66,9 @@
             android:id="@+id/newTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textNoSuggestions" />
+            android:inputType="textNoSuggestions"
+            android:focusable="false"
+            android:clickable="false"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilLocatio"
