@@ -1,14 +1,10 @@
 package bootcamp.cl.proyecto_agenda.UI.Fragments
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
-import bootcamp.cl.proyecto_agenda.MainActivity
-import java.time.DayOfWeek
 import java.util.Calendar
 
 class DatePickerFragment(val listener: (day:Int, month:Int, year:Int) -> Unit): DialogFragment(),

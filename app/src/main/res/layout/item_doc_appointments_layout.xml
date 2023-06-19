@@ -39,22 +39,13 @@
                 android:text="@string/especialidad"/>
 
             <TextView
-                android:id="@+id/Date"
+                android:id="@+id/dateAndTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textSize="25dp"
                 android:textColor="@color/white"
-                android:text="@string/fecha"/>
-
-            <TextView
-                android:id="@+id/Time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="@string/hora"/>
+                android:text="@string/fechaYHora"/>
 
             <TextView
                 android:id="@+id/Location"
@@ -68,7 +59,7 @@
 
 
             <ImageButton
-                android:id="@+id/btnDeleteMed"
+                android:id="@+id/btnDeleteDocAppointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"

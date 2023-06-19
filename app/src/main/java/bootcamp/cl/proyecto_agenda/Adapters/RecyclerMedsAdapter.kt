@@ -56,9 +56,9 @@ class RecyclerMedsAdapter(
 
     }
 
-    fun setMedsList(planets: MutableList<Meds>) {
+    fun setMedsList(meds: MutableList<Meds>) {
 
-        listMeds = planets
+        listMeds = meds
         notifyDataSetChanged()
 
     }

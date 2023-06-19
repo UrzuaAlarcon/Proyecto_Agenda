@@ -27,8 +27,9 @@
     <string name="agregar_nueva_cita">Agregar nueva cita</string>
     <string name="nombre_del_profecional">Nombre del profecional</string>
     <string name="especialidad">Especialidad</string>
-    <string name="fecha">Fecha</string>
+    <string name="fechaYHora">Fecha y hora</string>
     <string name="hora">Hora</string>
     <string name="ubicacion">Ubicacion</string>
     <string name="en_implementacion">En implementacion</string>
+    <string name="fecha">Fecha</string>
 </resources>

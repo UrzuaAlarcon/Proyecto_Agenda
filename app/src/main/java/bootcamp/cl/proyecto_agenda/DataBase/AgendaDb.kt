@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.Models.User
 
@@ -16,6 +17,8 @@ abstract class AgendaDb: RoomDatabase(){
 
 
     abstract fun medsDao(): MedsDao
+
+   // abstract fun docDao():DocAppointmentDao
 
     companion object{
 

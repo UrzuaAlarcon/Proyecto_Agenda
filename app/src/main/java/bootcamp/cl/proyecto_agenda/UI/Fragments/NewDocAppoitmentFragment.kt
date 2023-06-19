@@ -1,12 +1,16 @@
 package bootcamp.cl.proyecto_agenda.UI.Fragments
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import bootcamp.cl.proyecto_agenda.R
+import androidx.annotation.RequiresApi
 import bootcamp.cl.proyecto_agenda.databinding.FragmentNewDocAppoitmentBinding
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class NewDocAppoitmentFragment : Fragment() {
 
@@ -37,6 +41,8 @@ class NewDocAppoitmentFragment : Fragment() {
             showTimePickerDialog()
 
         }
+
+
     }
 
     private fun showTimePickerDialog() {
@@ -47,7 +53,7 @@ class NewDocAppoitmentFragment : Fragment() {
 
     private fun onTimeSelected(time:String){
 
-        binding.newTime.setText("hora: $time")
+        binding.newTime.setText("$time:00")
 
     }
 
@@ -58,6 +64,31 @@ class NewDocAppoitmentFragment : Fragment() {
     }
 
     private fun onDateSelected(day:Int, month:Int, year:Int){
-        binding.newDate.setText("Fecha: $day / $month / $year")
+        binding.newDate.setText(" $day-$month-$year")
     }
+
+    /*private fun saveDateAndTimeSelected():LocalDateTime{
+
+        var selectedDate = binding.newDate.text.toString()
+        var selectedTime = binding.newTime.text.toString()
+
+        var formatedDate = formatDate(selectedDate)
+
+        //String que representa la fecha y hora seleccionada
+        var dateAndTimeFormat = "$formatedDate $selectedTime"
+
+        var dateAndTime = LocalDateTime.parse(dateAndTimeFormat)
+
+        return dateAndTime
+
+    }
+
+    private fun formatDate(dateSelected:String):String{
+
+        val formatterInput = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val formatterOutput = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val date = LocalDate.parse(dateSelected, formatterInput)
+        return date.format(formatterOutput)
+    }*/
+
 }
