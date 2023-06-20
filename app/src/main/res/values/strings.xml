@@ -32,4 +32,7 @@
     <string name="ubicacion">Ubicacion</string>
     <string name="en_implementacion">En implementacion</string>
     <string name="fecha">Fecha</string>
+    <string name="guardado_exitoso">Guardado exitoso</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cita_medica_guardada">Cita medica guardada exitosamente</string>
 </resources>

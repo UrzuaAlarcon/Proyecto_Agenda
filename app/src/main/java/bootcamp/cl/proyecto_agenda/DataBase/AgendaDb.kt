@@ -9,7 +9,7 @@ import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.Models.User
 
 @Database(
-    entities = [Meds::class],
+    entities = [Meds::class , DocAppointment::class],
     version = 1
 )
 
@@ -18,7 +18,7 @@ abstract class AgendaDb: RoomDatabase(){
 
     abstract fun medsDao(): MedsDao
 
-   // abstract fun docDao():DocAppointmentDao
+    abstract fun docDao():DocAppointmentDao
 
     companion object{
 

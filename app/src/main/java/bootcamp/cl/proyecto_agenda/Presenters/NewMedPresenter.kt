@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import bootcamp.cl.proyecto_agenda.DataBase.MedsDao
 import bootcamp.cl.proyecto_agenda.Interfaces.AddNewMedPresenter
 import bootcamp.cl.proyecto_agenda.Models.Meds
+import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.UI.Fragments.NewMedFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,9 +31,9 @@ class NewMedPresenter(private val newMed: NewMedFragment) : AddNewMedPresenter {
     override fun showAlert() {
 
         val builder = AlertDialog.Builder(newMed.context)
-        builder.setTitle("Guardado exitoso")
+        builder.setTitle(newMed.context?.getString(R.string.guardado_exitoso))
         builder.setMessage("Medicamento guardado exitosamente")
-        builder.setPositiveButton("Aceptar", null)
+        builder.setPositiveButton(newMed.context?.getString(R.string.aceptar), null)
 
         val dialog: AlertDialog = builder.create()
         dialog.show()
