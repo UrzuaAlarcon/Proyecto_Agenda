@@ -52,10 +52,10 @@ class NewDocAppoitmentFragment : Fragment() {
 
             presenter.addDocAppointmentToDataBase(
                 newDocDao!!,
-                binding.newDocName.toString(),
-                binding.newSpecialty.toString(),
+                binding.newDocName.text.toString(),
+                binding.newSpecialty.text.toString(),
                 presenter.saveDateAndTimeSelected(),
-                binding.newLocation.toString()
+                binding.newLocation.text.toString()
             )
 
             clearTextBoxes()

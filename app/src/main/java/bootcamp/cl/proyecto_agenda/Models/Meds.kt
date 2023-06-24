@@ -6,6 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Meds(
+
+    //data for this database entity
+
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var medsName: String,

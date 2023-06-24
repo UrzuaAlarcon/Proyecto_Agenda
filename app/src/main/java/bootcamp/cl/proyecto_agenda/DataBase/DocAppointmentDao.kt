@@ -9,18 +9,27 @@ import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 
 @Dao
 interface DocAppointmentDao {
+    /**
+     * Retrieves all DocAppointments from the table.
+     */
+    @Query("SELECT * FROM DocAppointment")
+    suspend fun getAll(): MutableList<DocAppointment>
 
-    @Query ("SELECT * FROM DocAppointment")
-    suspend fun getAll():MutableList<DocAppointment>
-
+    /**
+     * Inserts a new DocAppointment into the table.
+     */
     @Insert
     suspend fun insertDocAppointment(docAppointment: DocAppointment)
 
+    /**
+     * Deletes a specific DocAppointment from the table.
+     */
     @Delete
     suspend fun deleteDocAppointment(docAppointment: DocAppointment)
 
+    /**
+     * Updates a specific DocAppointment in the table.
+     */
     @Update
     suspend fun updateDocApoointment(docAppointment: DocAppointment)
-
-    }
-
+}

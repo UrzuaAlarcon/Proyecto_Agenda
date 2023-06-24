@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
 import java.util.Calendar
+import kotlin.time.Duration.Companion.days
 
 class DatePickerFragment(val listener: (day:Int, month:Int, year:Int) -> Unit): DialogFragment(),
     DatePickerDialog.OnDateSetListener {
@@ -21,6 +22,8 @@ class DatePickerFragment(val listener: (day:Int, month:Int, year:Int) -> Unit): 
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         val month = calendar.get(Calendar.MONTH)
         val year = calendar.get(Calendar.YEAR)
+
+
 
         val picker = DatePickerDialog(requireContext(), this, year, month, day)
         picker.datePicker.minDate = calendar.timeInMillis

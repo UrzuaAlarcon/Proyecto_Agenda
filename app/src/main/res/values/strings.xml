@@ -35,4 +35,5 @@
     <string name="guardado_exitoso">Guardado exitoso</string>
     <string name="aceptar">Aceptar</string>
     <string name="cita_medica_guardada">Cita medica guardada exitosamente</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

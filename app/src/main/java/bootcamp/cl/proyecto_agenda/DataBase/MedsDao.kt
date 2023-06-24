@@ -6,25 +6,36 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import bootcamp.cl.proyecto_agenda.Models.Meds
-import bootcamp.cl.proyecto_agenda.Models.User
 
 @Dao
-
 interface MedsDao {
+    /**
+     * Retrieves all Meds from the table.
+     */
+    @Query("SELECT * FROM Meds")
+    suspend fun getAll(): MutableList<Meds>
 
-    @Query("SELECT *  FROM Meds")
-    suspend fun getAll():MutableList<Meds>
-
+    /**
+     * Retrieves Meds with a specific id from the table.
+     */
     @Query("SELECT * FROM Meds WHERE id = :id")
-    suspend fun getAllById(id:Int): MutableList<Meds>
+    suspend fun getAllById(id: Int): MutableList<Meds>
 
+    /**
+     * Inserts a new Meds into the table.
+     */
     @Insert
     suspend fun insertMeds(meds: Meds)
 
+    /**
+     * Deletes a specific Meds from the table.
+     */
     @Delete
     suspend fun deleteMeds(meds: Meds)
 
+    /**
+     * Updates a specific Meds in the table.
+     */
     @Update
     suspend fun updateMeds(meds: Meds)
-
 }

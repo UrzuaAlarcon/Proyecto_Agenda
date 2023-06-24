@@ -7,6 +7,8 @@ import java.time.LocalDateTime
 @Entity
 data class DocAppointment(
 
+     //data for this database entity
+
      @PrimaryKey(autoGenerate = true)
      val id:Int = 0,
      val doctorName:String,

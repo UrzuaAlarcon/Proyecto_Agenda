@@ -104,10 +104,8 @@ class MedsFragment : Fragment() {
                 adapterMeds.deleteMeds(meds)
 
             }
-
-
         }
-        builder.setNegativeButton("Cancelar", null)
+        builder.setNegativeButton(getString(R.string.cancelar), null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
 
