@@ -37,6 +37,7 @@ class CreateAccountPresenter(private val createAccount: CreateAccount) : Account
 
                     
                 }
+                .addOnFailureListener { showAlert() }
         } else {
             showAlert()
         }

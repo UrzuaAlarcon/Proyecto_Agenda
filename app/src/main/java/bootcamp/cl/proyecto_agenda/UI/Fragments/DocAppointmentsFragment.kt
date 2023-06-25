@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
@@ -85,6 +87,7 @@ class DocAppointmentsFragment : Fragment() {
         recyclerDoc.adapter = adapterDoc
 
     }
+
 
     private fun deleteDocAlert(docDao: DocAppointmentDao, docAppointment: DocAppointment){
 

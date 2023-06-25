@@ -5,16 +5,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import bootcamp.cl.proyecto_agenda.Adapters.NextAppointmentsAdapter
+import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
+import bootcamp.cl.proyecto_agenda.Models.DocAppointment
+import bootcamp.cl.proyecto_agenda.Models.NextAppointmentData
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class Main_Fragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
+    lateinit var agendaDB: AgendaDb
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,12 +33,20 @@ class Main_Fragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        agendaDB = AgendaDb.getDataBase(requireContext())
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val docDao = agendaDB.docDao()
+
+        runBlocking{
+
+            setNextAppointmentsView(docDao)
+
+        }
 
         binding.btnMeds.setOnClickListener {
 
@@ -67,6 +85,19 @@ class Main_Fragment : Fragment() {
             findNavController().navigate(R.id.action_main_Fragment2_to_home2)
 
         }
+
+
+    }
+
+    suspend fun setNextAppointmentsView(docAppointmentDao: DocAppointmentDao){
+
+        val currentTimeStamp = System.currentTimeMillis()
+        val listView = binding.listViewId
+        val appointments = docAppointmentDao?.getNextAppointments(currentTimeStamp)?.toList() ?: emptyList()
+
+        val arrayAdapter = NextAppointmentsAdapter(requireContext(), appointments)
+
+        listView.adapter = arrayAdapter
 
 
     }

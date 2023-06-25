@@ -24,10 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:textSize="30dp"
-                android:textStyle="bold"
+                android:text="@string/nombre_del_profecional"
                 android:textColor="@color/white"
-                android:text="@string/nombre_del_profecional"/>
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Specialty"

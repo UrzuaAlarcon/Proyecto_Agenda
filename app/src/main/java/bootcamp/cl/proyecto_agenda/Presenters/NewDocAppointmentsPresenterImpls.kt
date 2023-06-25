@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
 import bootcamp.cl.proyecto_agenda.Interfaces.NewDocAppointmentPresenter
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
+import bootcamp.cl.proyecto_agenda.Models.NextAppointmentData
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.UI.Fragments.DatePickerFragment
 import bootcamp.cl.proyecto_agenda.UI.Fragments.NewDocAppoitmentFragment
@@ -11,11 +12,9 @@ import bootcamp.cl.proyecto_agenda.UI.Fragments.TimePickerFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Locale
 
 // This class represents a presenter implementation for a new doctor appointment screen.
 // It implements the NewDocAppointmentPresenter interface.
@@ -148,4 +147,4 @@ class NewDocAppointmentsPresenterImpls(private val newDoc: NewDocAppoitmentFragm
         }
     }
 
-    }
+}

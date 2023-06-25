@@ -2,6 +2,7 @@ package bootcamp.cl.proyecto_agenda.Interfaces
 
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
+import bootcamp.cl.proyecto_agenda.Models.NextAppointmentData
 import java.time.LocalDateTime
 
 interface NewDocAppointmentPresenter {
