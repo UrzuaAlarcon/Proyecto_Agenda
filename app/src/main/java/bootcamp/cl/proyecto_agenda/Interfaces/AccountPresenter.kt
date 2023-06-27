@@ -18,11 +18,15 @@ interface AccountPresenter {
         view: View
     )
 
+    /**
+     * Adds the user to the data base
+     */
     fun addNewUserToDataBase(
         userDao: UserDao,
-        mail: String,
-        name:String,
-        uid:String
+        uid:String,
+        mail:String,
+        name:String
+
     )
 
     /**

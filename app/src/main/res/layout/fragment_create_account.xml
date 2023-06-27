@@ -4,10 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-    </data>
-
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,6 +44,16 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
 
+        <TextView
+            android:id="@+id/mailErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#EA2222"
+            android:gravity="center"
+            android:visibility="gone"
+            />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"
             android:layout_width="match_parent"
@@ -61,18 +67,8 @@
             android:layout_height="wrap_content"
             android:inputType="numberPassword" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilRepitPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:helperText="Repetir Contraseña"
-            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userRepitPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberPassword" />
+
 
         <Button
             android:id="@+id/btnSaveCreateAccount"
