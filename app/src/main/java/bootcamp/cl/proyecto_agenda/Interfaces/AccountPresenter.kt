@@ -11,6 +11,7 @@ interface AccountPresenter {
      * Displays a visual representation of the view.
      */
     fun createNewAccount(
+        name:String,
         mail: String?,
         password: String?,
         navController: NavController,

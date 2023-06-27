@@ -2,16 +2,21 @@ package bootcamp.cl.proyecto_agenda.Presenters
 
 import android.app.AlertDialog
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.widget.EditText
 import androidx.navigation.NavController
+import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.PREFERENCES_KEY
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.UserDao
 import bootcamp.cl.proyecto_agenda.Interfaces.AccountPresenter
 import bootcamp.cl.proyecto_agenda.Models.User
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.UI.Fragments.CreateAccount
+import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.Delay
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -19,13 +24,19 @@ import kotlinx.coroutines.runBlocking
 class CreateAccountPresenter(private val createAccount: CreateAccount) : AccountPresenter {
 
     override fun createNewAccount(
+        name:String,
         mail: String?,
         password: String?,
         navController: NavController,
         view: View
     ) {
+        val userMail:EditText = view.findViewById(R.id.userName)
+        val userName:EditText = view.findViewById(R.id.userEmail)
+        val agendaDb: AgendaDb = AgendaDb.getDataBase(createAccount.requireContext())
+        val userDao = agendaDb.userDao()
+        val handler = Handler(Looper.getMainLooper())
 
-        if (mail!!.isNotEmpty() && password!!.isNotEmpty()) {
+        if (name!!.isNotEmpty() && mail!!.isNotEmpty() && password!!.isNotEmpty()) {
             FirebaseAuth.getInstance()
                 .createUserWithEmailAndPassword(
                     mail,
@@ -38,6 +49,13 @@ class CreateAccountPresenter(private val createAccount: CreateAccount) : Account
 
                     if (it.isSuccessful) {
                         navController.navigate(R.id.action_createAccount2_to_main_Fragment2)
+
+                        handler.postDelayed({addNewUserToDataBase(userDao,
+                            userMail.text.toString(),
+                            userName.text.toString(),
+                            createAccount.getUid()
+                        )},2000)
+
                     } else {
                         showAlert()
                     }

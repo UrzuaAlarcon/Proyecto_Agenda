@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.toError
 import bootcamp.cl.proyecto_agenda.Presenters.CreateAccountPresenter
 import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
 
@@ -33,28 +34,45 @@ class CreateAccount : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val agendaDb: AgendaDb = AgendaDb.getDataBase(requireContext())
-        val userDao = agendaDb.userDao()
-        val handler = Handler(Looper.getMainLooper())
-
         val presenter = CreateAccountPresenter(this)
 
         binding.btnSaveCreateAccount.setOnClickListener {
 
-            presenter.createNewAccount(
-                binding.userEmail.text.toString(),
-                binding.userPassword.text.toString(),
-                findNavController(),
-                view
-            )
+            if (binding.userName.text!!.isEmpty() ||
+                binding.userEmail.text!!.isEmpty() ||
+                binding.userPassword.text!!.isEmpty()
+            ) {
 
-            handler.postDelayed({presenter.addNewUserToDataBase(userDao,
-                binding.userEmail.text.toString(),
-                binding.userName.text.toString(),
-                getUid()
-            )},2000)
+                notEmptyFields()
 
+                return@setOnClickListener
+
+            } else {
+                presenter.createNewAccount(
+                    binding.userName.text.toString(),
+                    binding.userEmail.text.toString(),
+                    binding.userPassword.text.toString(),
+                    findNavController(),
+                    view
+                )
+            }
         }
+    }
+
+    private fun notEmptyFields() {
+
+        if (binding.userName.text!!.isEmpty()) {
+            binding.userName.toError()
+        }
+
+        if (binding.userEmail.text!!.isEmpty()) {
+            binding.userEmail.toError()
+        }
+
+        if (binding.userPassword.text!!.isEmpty()) {
+            binding.userPassword.toError()
+        }
+
     }
 }
 
