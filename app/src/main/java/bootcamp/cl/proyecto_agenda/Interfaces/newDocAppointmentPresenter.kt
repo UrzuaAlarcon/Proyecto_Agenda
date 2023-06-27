@@ -56,7 +56,8 @@ interface NewDocAppointmentPresenter {
         doctorName: String,
         specialty: String,
         dateAndTime: LocalDateTime,
-        location: String
+        location: String,
+        userId:String
     )
 
     /**
@@ -69,5 +70,5 @@ interface NewDocAppointmentPresenter {
      * @param docAppointmentDao The DocAppointmentDao object to access the database.
      * @return A list of DocAppointment objects representing the doctor appointments.
      */
-    suspend fun getAllDocs(docAppointmentDao: DocAppointmentDao?): List<DocAppointment>
+    suspend fun getAllDocs(docAppointmentDao: DocAppointmentDao?, uid:String): List<DocAppointment>
 }

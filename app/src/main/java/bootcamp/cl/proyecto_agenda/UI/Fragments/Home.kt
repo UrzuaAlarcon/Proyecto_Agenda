@@ -25,11 +25,13 @@ class Home() : Fragment(R.layout.fragment_home) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val preferences = context?.getSharedPreferences(getString
-            (R.string.preferences_file),Context.MODE_PRIVATE)
-        val uid = preferences?.getString("UID",null)
+        val preferences = context?.getSharedPreferences(
+            getString
+                (R.string.preferences_file), Context.MODE_PRIVATE
+        )
+        val uid = preferences?.getString("UID", null)
 
-        if (uid != null){
+        if (uid != null) {
             findNavController().navigate(R.id.action_home2_to_main_Fragment2)
         }
 
@@ -64,7 +66,8 @@ class Home() : Fragment(R.layout.fragment_home) {
                 binding.singInUserName.text.toString(),
                 binding.SingInUserPassword.text.toString(),
                 findNavController(),
-                view)
+                view
+            )
 
         }
     }

@@ -6,13 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import bootcamp.cl.proyecto_agenda.Adapters.RecyclerDocsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
 import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerDocAppointments
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
@@ -73,7 +72,7 @@ class DocAppointmentsFragment : Fragment() {
 
         runBlocking {
 
-            val listaActual = docDao.getAll()
+            val listaActual = docDao.getAll(getUid())
 
             coroutineScope {
 

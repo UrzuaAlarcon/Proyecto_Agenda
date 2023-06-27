@@ -11,7 +11,8 @@ interface AddNewMedPresenter {
     fun addMedToDataBase(
         medsDao: MedsDao?,
         name: String,
-        indication: String
+        indication: String,
+        userId:String
     )
 
     /**
@@ -23,5 +24,5 @@ interface AddNewMedPresenter {
      * Retrieves all medications from the database using the provided MedsDao.
      * Returns a list of Meds.
      */
-    suspend fun getAllMeds(medsDao: MedsDao?): List<Meds>
+    suspend fun getAllMeds(medsDao: MedsDao?, uid:String): List<Meds>
 }

@@ -73,18 +73,20 @@ class NewDocAppointmentsPresenterImpls(private val newDoc: NewDocAppoitmentFragm
         doctorName: String,
         specialty: String,
         dateAndTime: LocalDateTime,
-        location: String
+        location: String,
+        userId:String
     ) {
         val docAppointment = DocAppointment(
             doctorName = doctorName,
             specialty = specialty,
             dateAndTime = dateAndTime,
-            location = location
+            location = location,
+            userId = userId
         )
 
         runBlocking {
             launch(Dispatchers.IO) {
-                docAppointmentDao?.insertDocAppointment(docAppointment)
+                docAppointmentDao.insertDocAppointment(docAppointment)
             }
         }
 
@@ -103,9 +105,9 @@ class NewDocAppointmentsPresenterImpls(private val newDoc: NewDocAppoitmentFragm
     }
 
     // Retrieves all doctor appointments from the database.
-    override suspend fun getAllDocs(docAppointmentDao: DocAppointmentDao?)
+    override suspend fun getAllDocs(docAppointmentDao: DocAppointmentDao?, uid:String)
             : List<DocAppointment> {
-        return docAppointmentDao?.getAll()?.toList() ?: emptyList()
+        return docAppointmentDao?.getAll(uid)?.toList() ?: emptyList()
     }
 
     // Formats the selected date in the appropriate format and sets it in the view.

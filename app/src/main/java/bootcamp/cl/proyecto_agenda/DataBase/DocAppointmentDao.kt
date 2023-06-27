@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import bootcamp.cl.proyecto_agenda.Models.NextAppointmentData
+import bootcamp.cl.proyecto_agenda.Models.User
 
 @Dao
 interface DocAppointmentDao {
@@ -14,12 +15,12 @@ interface DocAppointmentDao {
     /**
      * Retrieves all DocAppointments from the table.
      */
-    @Query("SELECT * FROM DocAppointment")
-    suspend fun getAll(): MutableList<DocAppointment>
+    @Query("SELECT * FROM DocAppointment WHERE userId =:uid ")
+    suspend fun getAll(uid:String): MutableList<DocAppointment>
 
     @Query("SELECT specialty, dateAndTime, location FROM DocAppointment " +
-            "WHERE dateAndTime >= :currentDate ORDER BY dateAndTime ASC LIMIT 2")
-    suspend fun getNextAppointments(currentDate : Long):List<NextAppointmentData>
+            "WHERE dateAndTime >= :currentDate AND userId = :uid ORDER BY dateAndTime ASC LIMIT 2" )
+    suspend fun getNextAppointments(currentDate : Long, uid:String):List<NextAppointmentData>
 
     /**
      * Inserts a new DocAppointment into the table.

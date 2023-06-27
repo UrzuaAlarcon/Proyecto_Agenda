@@ -1,18 +1,14 @@
 package bootcamp.cl.proyecto_agenda.UI.Fragments
 
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.Presenters.NewDocAppointmentsPresenterImpls
 import bootcamp.cl.proyecto_agenda.databinding.FragmentNewDocAppoitmentBinding
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class NewDocAppoitmentFragment : Fragment() {
 
@@ -55,7 +51,8 @@ class NewDocAppoitmentFragment : Fragment() {
                 binding.newDocName.text.toString(),
                 binding.newSpecialty.text.toString(),
                 presenter.saveDateAndTimeSelected(),
-                binding.newLocation.text.toString()
+                binding.newLocation.text.toString(),
+                getUid()
             )
 
             clearTextBoxes()

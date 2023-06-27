@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import bootcamp.cl.proyecto_agenda.Adapters.RecyclerMedsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.MedsDao
 import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerMeds
 import bootcamp.cl.proyecto_agenda.Models.Meds
@@ -72,7 +73,7 @@ class MedsFragment : Fragment() {
 
         runBlocking {
 
-            val listaActual = medsDao.getAll()
+            val listaActual = medsDao.getAll(getUid())
 
             coroutineScope {
 

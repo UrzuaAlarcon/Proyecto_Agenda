@@ -5,20 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.Adapters.NextAppointmentsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
-import bootcamp.cl.proyecto_agenda.Models.DocAppointment
-import bootcamp.cl.proyecto_agenda.Models.NextAppointmentData
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class Main_Fragment : Fragment() {
@@ -67,8 +63,9 @@ class Main_Fragment : Fragment() {
 
         binding.btnPrescriptions.setOnClickListener {
 
-            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT)
+            Toast.makeText(context,getString(R.string.en_implementacion), Toast.LENGTH_SHORT)
                 .show()
+
         }
 
         binding.btnLogOut.setOnClickListener {
@@ -93,7 +90,7 @@ class Main_Fragment : Fragment() {
 
         val currentTimeStamp = System.currentTimeMillis()
         val listView = binding.listViewId
-        val appointments = docAppointmentDao?.getNextAppointments(currentTimeStamp)?.toList() ?: emptyList()
+        val appointments = docAppointmentDao?.getNextAppointments(currentTimeStamp, getUid())?.toList() ?: emptyList()
 
         val arrayAdapter = NextAppointmentsAdapter(requireContext(), appointments)
 

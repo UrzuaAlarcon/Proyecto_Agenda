@@ -1,15 +1,14 @@
 package bootcamp.cl.proyecto_agenda.UI.Fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
+import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.Presenters.NewMedPresenter
 import bootcamp.cl.proyecto_agenda.databinding.FragmentNewMedBinding
-import kotlinx.coroutines.runBlocking
 
 class NewMedFragment : Fragment() {
 
@@ -35,7 +34,8 @@ class NewMedFragment : Fragment() {
             presenter.addMedToDataBase(
                 newMedDao,
                 binding.newMedName.text.toString(),
-                binding.newMedIndication.text.toString()
+                binding.newMedIndication.text.toString(),
+                getUid()
             )
 
             binding.newMedName.text?.clear()
@@ -43,10 +43,6 @@ class NewMedFragment : Fragment() {
 
             presenter.showAlert()
 
-
-            runBlocking {
-                Log.i("pruebas", "onViewCreated: ${presenter.getAllMeds(newMedDao)}")
-            }
 
         }
 

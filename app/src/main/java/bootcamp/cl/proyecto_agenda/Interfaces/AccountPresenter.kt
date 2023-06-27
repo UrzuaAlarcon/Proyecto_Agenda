@@ -2,6 +2,7 @@ package bootcamp.cl.proyecto_agenda.Interfaces
 
 import android.view.View
 import androidx.navigation.NavController
+import bootcamp.cl.proyecto_agenda.DataBase.UserDao
 
 interface AccountPresenter {
     /**
@@ -14,6 +15,13 @@ interface AccountPresenter {
         password: String?,
         navController: NavController,
         view: View
+    )
+
+    fun addNewUserToDataBase(
+        userDao: UserDao,
+        mail: String,
+        name:String,
+        uid:String
     )
 
     /**

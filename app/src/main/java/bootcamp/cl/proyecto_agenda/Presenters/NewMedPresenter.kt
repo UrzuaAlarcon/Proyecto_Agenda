@@ -16,10 +16,15 @@ class NewMedPresenter(private val newMed: NewMedFragment) : AddNewMedPresenter {
     override fun addMedToDataBase(
         medsDao: MedsDao?,
         name: String,
-        indication: String
+        indication: String,
+        userId: String
     ) {
 
-        var med = Meds(medsName = name, medsIndication = indication)
+        var med = Meds(
+            medsName = name,
+            medsIndication = indication,
+            userId = userId
+        )
 
         runBlocking {
             launch(Dispatchers.IO) {
@@ -40,7 +45,7 @@ class NewMedPresenter(private val newMed: NewMedFragment) : AddNewMedPresenter {
 
     }
 
-    override suspend fun getAllMeds(medsDao: MedsDao?): List<Meds> {
-        return medsDao?.getAll()?.toList() ?: emptyList()
+    override suspend fun getAllMeds(medsDao: MedsDao?, uid:String): List<Meds> {
+        return medsDao?.getAll(uid)?.toList() ?: emptyList()
     }
 }

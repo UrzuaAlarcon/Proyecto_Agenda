@@ -9,13 +9,19 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import bootcamp.cl.proyecto_agenda.Models.Meds
+import bootcamp.cl.proyecto_agenda.Models.User
 
 @Database(
-    entities = [Meds::class, DocAppointment::class],
+    entities = [User::class, Meds::class, DocAppointment::class],
     version = 1
 )
 @TypeConverters(Converter::class)
 abstract class AgendaDb : RoomDatabase() {
+
+    /**
+     * Defines the DAO for accessing the User table.
+     */
+    abstract fun userDao():UserDao
 
     /**
      * Defines the DAO for accessing the Meds table.

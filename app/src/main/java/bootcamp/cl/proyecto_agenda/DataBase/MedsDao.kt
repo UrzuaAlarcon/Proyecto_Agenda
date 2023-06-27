@@ -12,8 +12,8 @@ interface MedsDao {
     /**
      * Retrieves all Meds from the table.
      */
-    @Query("SELECT * FROM Meds")
-    suspend fun getAll(): MutableList<Meds>
+    @Query("SELECT * FROM MEDS WHERE userId =:uid ")
+    suspend fun getAll(uid:String): MutableList<Meds>
 
     /**
      * Retrieves Meds with a specific id from the table.
