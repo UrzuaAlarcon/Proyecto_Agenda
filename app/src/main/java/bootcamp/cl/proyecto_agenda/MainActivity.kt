@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     lateinit var binding:ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { setTheme(R.style.Theme_Proyecto_Agenda)
+        Thread.sleep(2000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
