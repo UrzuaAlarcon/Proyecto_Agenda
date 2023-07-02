@@ -35,17 +35,48 @@ el objetivo de mejorar la experiencia en sus atenciones de salud
 
 ### principal 
 
-<img width="342" alt="Captura de pantalla 2023-05-20 a la(s) 20 55 46" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/b8880676-f749-47cd-9fea-6a413d6a3cdd">
+<img width="290" alt="Captura de pantalla 2023-06-27 a la(s) 15 39 15" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/8ac07d59-9cef-414a-9afd-0b16abe79d8a">
+
 
 
 ### Crear usuario
 
-<img width="352" alt="Captura de pantalla 2023-05-20 a la(s) 20 56 07" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/f02ca17e-da29-4251-82d6-ac3175ac632e">
+<img width="286" alt="Captura de pantalla 2023-06-27 a la(s) 15 39 33" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/149d062d-b984-450c-a0ce-1e73831fefe4">
+
 
 
 ### Main Menu 
 
-<img width="336" alt="Captura de pantalla 2023-05-20 a la(s) 20 56 57" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/d1b967eb-b667-4fc6-93be-2f3d8eaba595">
+<img width="283" alt="Captura de pantalla 2023-06-27 a la(s) 15 40 12" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/50ff8d26-f018-4504-9578-a74860e3d1d8">
+
+
+### Agregar medicamento
+
+<img width="287" alt="Captura de pantalla 2023-06-27 a la(s) 15 42 05" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/086decb8-1300-4554-990e-6d2e7bfed23c">
+
+
+
+### Vista de medicamentos 
+
+<img width="289" alt="Captura de pantalla 2023-06-27 a la(s) 15 41 52" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/2dc53072-cdc6-4b7f-862b-e7c929a9817a">
+
+
+
+### Agregar cita medica 
+
+<img width="285" alt="Captura de pantalla 2023-06-27 a la(s) 15 43 04" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/1632e1f6-4b18-4803-9c29-cd142597edfd">
+
+
+
+### Vista de Citas medicas 
+
+<img width="287" alt="Captura de pantalla 2023-06-27 a la(s) 15 45 10" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/41ee0496-80cf-442d-8df1-1953b039ee6f">
+
+
+### Vista de recordatorio en pantalla principal
+
+<img width="288" alt="Captura de pantalla 2023-06-27 a la(s) 15 45 28" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/1ea5b085-32d3-4c3b-b7a6-40676e2c416f">
+
 
 
 ### Integracion de FireBase
@@ -57,10 +88,4 @@ el objetivo de mejorar la experiencia en sus atenciones de salud
 ### Autenticacion de usuarios 
 
 <img width="1114" alt="Captura de pantalla 2023-05-20 a la(s) 20 57 47" src="https://github.com/UrzuaAlarcon/Proyecto_Agenda/assets/122647461/5d0fb403-7e99-4c47-a098-ee8b4773c3a1">
-
-
-# MVP proximo
-
-integracion de login, primeras funcionalidades en el menu "Medicamentos", vista de recordatorios + mejoras 
-en el diseño de la ui 
 
