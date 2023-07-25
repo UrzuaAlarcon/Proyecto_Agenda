@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/TestAppointmentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="4dp"
+        android:foreground="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/blue_layout">
+
+            <TextView
+                android:id="@+id/TestType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/tipo_de_examen"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/DateAndTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/fechaYHora"/>
+
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/ubicacion"/>
+
+            <TextView
+                android:id="@+id/Indications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="@string/indicaciones_examen"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnDeleteTestAppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/_delete"
+                android:backgroundTint="@color/blue_layout"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

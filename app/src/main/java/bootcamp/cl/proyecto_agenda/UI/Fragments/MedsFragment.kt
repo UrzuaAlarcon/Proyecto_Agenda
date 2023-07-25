@@ -13,7 +13,7 @@ import bootcamp.cl.proyecto_agenda.Adapters.RecyclerMedsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.MedsDao
-import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerMeds
+import bootcamp.cl.proyecto_agenda.Interfaces.Recyclers.RecyclerMeds
 import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentMedsBinding

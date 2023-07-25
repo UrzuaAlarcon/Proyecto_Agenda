@@ -10,7 +10,7 @@ import bootcamp.cl.proyecto_agenda.databinding.ItemNextAppointmentsBinding
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class NextAppointmentsAdapter(private val context: Context, private val NAList: List<NextAppointmentData>)
+class NextDocAppointmentsAdapter(private val context: Context, private val NAList: List<NextAppointmentData>)
     : ArrayAdapter<NextAppointmentData>(context, 0, NAList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

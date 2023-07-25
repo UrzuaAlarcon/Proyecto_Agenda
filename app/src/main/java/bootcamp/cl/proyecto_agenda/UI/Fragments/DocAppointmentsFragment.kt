@@ -13,7 +13,7 @@ import bootcamp.cl.proyecto_agenda.Adapters.RecyclerDocsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
-import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerDocAppointments
+import bootcamp.cl.proyecto_agenda.Interfaces.Recyclers.RecyclerDocAppointments
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.databinding.FragmentDocAppointmentsBinding
@@ -77,7 +77,7 @@ class DocAppointmentsFragment : Fragment() {
     private fun deleteDocAlert(docDao: DocAppointmentDao, docAppointment: DocAppointment) {
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Borrar cita")
-        builder.setMessage("¿Está seguro que desea borrar el medicamento? Esta acción no podrá ser deshecha.")
+        builder.setMessage("¿Está seguro que desea borrar la cita? Esta acción no podrá ser deshecha.")
         builder.setPositiveButton(getString(R.string.aceptar)) { dialog, which ->
             runBlocking {
                 docDao?.deleteDocAppointment(docAppointment)

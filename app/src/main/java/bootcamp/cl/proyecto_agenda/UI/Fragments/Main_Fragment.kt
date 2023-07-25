@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import bootcamp.cl.proyecto_agenda.Adapters.NextAppointmentsAdapter
+import bootcamp.cl.proyecto_agenda.Adapters.NextDocAppointmentsAdapter
 import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.DocAppointmentDao
@@ -61,8 +61,8 @@ class Main_Fragment : Fragment() {
 
         // Sets a click listener for the "Test Appointments" button
         binding.btnTestAppointments.setOnClickListener {
-            // Displays a toast message indicating that this feature is under implementation
-            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+            // Navigates to the TestAppointmentFragment using the NavController
+            findNavController().navigate(R.id.action_main_Fragment2_to_testAppointmentsFragment)
         }
 
         // Sets a click listener for the "Prescriptions" button
@@ -98,7 +98,7 @@ class Main_Fragment : Fragment() {
         val appointments = docAppointmentDao?.getNextAppointments(currentTimeStamp, getUid())?.toList() ?: emptyList()
 
         // Creates an instance of the NextAppointmentsAdapter using the retrieved appointments
-        val arrayAdapter = NextAppointmentsAdapter(requireContext(), appointments)
+        val arrayAdapter = NextDocAppointmentsAdapter(requireContext(), appointments)
 
         // Sets the adapter for the ListView
         listView.adapter = arrayAdapter

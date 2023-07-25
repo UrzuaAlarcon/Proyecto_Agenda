@@ -35,5 +35,8 @@
     <string name="guardado_exitoso">Guardado exitoso</string>
     <string name="aceptar">Aceptar</string>
     <string name="cita_medica_guardada">Cita medica guardada exitosamente</string>
+    <string name="cita_examen_guardada">Cita a examen guardada exitosamente</string>
     <string name="cancelar">Cancelar</string>
+    <string name="tipo_de_examen">Tipo de examen</string>
+    <string name="indicaciones_examen">Indicaciones para el examen:</string>
 </resources>

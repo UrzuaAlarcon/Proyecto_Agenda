@@ -3,7 +3,7 @@ package bootcamp.cl.proyecto_agenda.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerMeds
+import bootcamp.cl.proyecto_agenda.Interfaces.Recyclers.RecyclerMeds
 import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.databinding.ItemMedsLayoutBinding
 class RecyclerMedsAdapter(

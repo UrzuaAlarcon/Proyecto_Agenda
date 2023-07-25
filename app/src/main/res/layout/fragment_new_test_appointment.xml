@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/common_padding_default"
+        android:background="@drawable/fondolayout"
+        tools:ignore="ExtraText">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTestType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:helperText="@string/tipo_de_examen"
+            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newTestType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:helperText="@string/fecha"
+            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        //Aqui va el date picker
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:clickable="false"
+            android:focusable="false"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:helperText="@string/hora"
+            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:focusable="false"
+            android:clickable="false"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLocatio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:helperText="@string/ubicacion"
+            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilIndication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:helperText="@string/indicaciones_examen"
+            app:helperTextTextAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newIndication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions" />
+
+        <Button
+            android:id="@+id/btnAddNewTestAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/agregar"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+</layout>

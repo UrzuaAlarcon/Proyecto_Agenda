@@ -1,15 +1,13 @@
 package bootcamp.cl.proyecto_agenda.Adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import bootcamp.cl.proyecto_agenda.Interfaces.RecyclerDocAppointments
+import bootcamp.cl.proyecto_agenda.Interfaces.Recyclers.RecyclerDocAppointments
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import bootcamp.cl.proyecto_agenda.databinding.ItemDocAppointmentsLayoutBinding
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import kotlin.time.times
 
 class RecyclerDocsAdapter(
     private var listDocsAppointment: MutableList<DocAppointment>,

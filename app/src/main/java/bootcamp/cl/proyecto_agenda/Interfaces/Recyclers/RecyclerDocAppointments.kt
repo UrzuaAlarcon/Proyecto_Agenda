@@ -1,4 +1,4 @@
-package bootcamp.cl.proyecto_agenda.Interfaces
+package bootcamp.cl.proyecto_agenda.Interfaces.Recyclers
 
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
 import java.text.FieldPosition
