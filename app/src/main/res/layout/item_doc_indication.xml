@@ -29,14 +29,13 @@
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/Indication"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="@string/ver_indicaciones"/>
+           <ImageView
+               android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:scaleType="fitXY"
+               android:clickable="true"
+               android:focusable="true"
+               android:src="@drawable/baseline_image_24"/>
 
             <ImageButton
                 android:id="@+id/btnDeleteDocAppointment"
