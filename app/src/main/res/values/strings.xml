@@ -39,4 +39,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="tipo_de_examen">Tipo de examen</string>
     <string name="indicaciones_examen">Indicaciones para el examen:</string>
+    <string name="agregar_indicacion">Agregar indicacion</string>
+    <string name="Diagnostico">Diagnostico</string>
+    <string name="ver_indicaciones">Ver indicaciones</string>
 </resources>

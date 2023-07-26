@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_main_Fragment2_to_testAppointmentsFragment"
             app:destination="@id/testAppointmentsFragment" />
+        <action
+            android:id="@+id/action_main_Fragment2_to_docIndicationsFragment"
+            app:destination="@id/docIndicationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/medsFragment"
@@ -86,4 +89,18 @@
         android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.NewTestAppointmentFragment"
         android:label="NewTestAppointmentFragment"
         tools:layout="@layout/fragment_new_test_appointment"/>
+    <fragment
+        android:id="@+id/docIndicationsFragment"
+        android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.DocIndicationsFragment"
+        android:label="DocIndicationsFragment"
+        tools:layout="@layout/fragment_doc_indications">
+        <action
+            android:id="@+id/action_docIndicationsFragment_to_newDocIndicationFragment"
+            app:destination="@id/newDocIndicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newDocIndicationFragment"
+        android:name="bootcamp.cl.proyecto_agenda.UI.Fragments.NewDocIndicationFragment"
+        android:label="fragment_new_doc_indication"
+        tools:layout="@layout/fragment_new_doc_indication" />
 </navigation>

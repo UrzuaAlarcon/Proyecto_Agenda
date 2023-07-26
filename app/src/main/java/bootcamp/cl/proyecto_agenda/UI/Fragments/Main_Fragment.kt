@@ -68,7 +68,7 @@ class Main_Fragment : Fragment() {
         // Sets a click listener for the "Prescriptions" button
         binding.btnPrescriptions.setOnClickListener {
             // Displays a toast message indicating that this feature is under implementation
-            Toast.makeText(context, getString(R.string.en_implementacion), Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_main_Fragment2_to_docIndicationsFragment)
         }
 
         // Sets a click listener for the "Log Out" button
