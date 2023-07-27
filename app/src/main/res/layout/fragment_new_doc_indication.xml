@@ -38,12 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textNoSuggestions" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Agregar foto"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/common_padding_2"/>
 
         <ImageView
             android:id="@+id/IndicationImage"
@@ -56,11 +50,33 @@
             android:focusable="true"
             android:layout_margin="@dimen/common_padding_2"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <Button
+                android:id="@+id/btnCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tomar Foto"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnLoadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnAddNewDocAppointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/agregar"
+            android:text="@string/agregar_indicacion"
             android:textStyle="bold"
             android:textSize="30dp"/>
 

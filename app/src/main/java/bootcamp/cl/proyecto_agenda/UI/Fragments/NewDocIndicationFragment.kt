@@ -1,60 +1,86 @@
 package bootcamp.cl.proyecto_agenda.UI.Fragments
 
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import bootcamp.cl.proyecto_agenda.Presenters.NewDocIndicationPresenterImpl
 import bootcamp.cl.proyecto_agenda.R
+import bootcamp.cl.proyecto_agenda.databinding.FragmentNewDocIndicationBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [NewDocIndicationFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class NewDocIndicationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    val presenter = NewDocIndicationPresenterImpl(this)
+    lateinit var binding: FragmentNewDocIndicationBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = FragmentNewDocIndicationBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_doc_indication, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NewDocIndicationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            NewDocIndicationFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnCamera.setOnClickListener {
+
+            presenter.checkPermissions()
+
+        }
+
+    }
+
+/*    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == 777) {
+
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                presenter.takePictureWithPhoneCamera()
+            } else {
+
+                Toast.makeText(context,
+                    "permisos rechazados por primera vez",
+                    Toast.LENGTH_SHORT
+                ).show()
+
             }
+
+        }
+    }*/
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == Activity.RESULT_OK && requestCode ==
+            777 && data != null
+        ) {
+
+            val imageBitMap = data.extras?.get("data") as Bitmap
+            if (imageBitMap != null) {
+
+                binding.IndicationImage.setImageBitmap(imageBitMap)
+
+            } else {
+
+                Toast.makeText(context, "No se pudo tomar la foto", Toast.LENGTH_SHORT).show()
+
+            }
+
+        }
+
+
     }
 }
