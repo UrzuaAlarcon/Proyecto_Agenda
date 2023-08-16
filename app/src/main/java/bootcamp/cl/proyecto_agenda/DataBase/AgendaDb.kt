@@ -8,12 +8,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import bootcamp.cl.proyecto_agenda.Models.DocAppointment
+import bootcamp.cl.proyecto_agenda.Models.DocIndications
 import bootcamp.cl.proyecto_agenda.Models.Meds
 import bootcamp.cl.proyecto_agenda.Models.TestAppointment
 import bootcamp.cl.proyecto_agenda.Models.User
 
 @Database(
-    entities = [User::class, Meds::class, DocAppointment::class, TestAppointment::class],
+    entities = [User::class, Meds::class, DocAppointment::class, TestAppointment::class,
+        DocIndications::class],
     version = 1
 )
 @TypeConverters(Converter::class)
@@ -38,6 +40,11 @@ abstract class AgendaDb : RoomDatabase() {
      * Defines the DAO for accessing the TestAppointment table.
      */
     abstract fun testDao():TestAppointmentDao
+
+    /**
+     * Defines the DAO for accessing the DocIndication table.
+     */
+    abstract fun docIndicationDao():DocIndicationDao
 
     companion object {
 
