@@ -11,17 +11,16 @@ import bootcamp.cl.proyecto_agenda.DataBase.AgendaDb
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.PREFERENCES_KEY
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.getUid
 import bootcamp.cl.proyecto_agenda.DataBase.UserDao
-import bootcamp.cl.proyecto_agenda.Interfaces.AccountPresenter
+import bootcamp.cl.proyecto_agenda.Interfaces.CreateAccountPresenter
 import bootcamp.cl.proyecto_agenda.Models.User
 import bootcamp.cl.proyecto_agenda.R
 import bootcamp.cl.proyecto_agenda.UI.Fragments.CreateAccount
-import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class CreateAccountPresenter(private val createAccount: CreateAccount) : AccountPresenter {
+class CreateAccountPresenterImpl(private val createAccount: CreateAccount) : CreateAccountPresenter {
 
     override fun createNewAccount(
         name: String,

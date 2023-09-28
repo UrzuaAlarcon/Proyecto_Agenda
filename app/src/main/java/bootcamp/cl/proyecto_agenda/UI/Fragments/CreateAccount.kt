@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import bootcamp.cl.proyecto_agenda.DataBase.ConstantUtil.toError
-import bootcamp.cl.proyecto_agenda.Presenters.CreateAccountPresenter
+import bootcamp.cl.proyecto_agenda.Presenters.CreateAccountPresenterImpl
 import bootcamp.cl.proyecto_agenda.databinding.FragmentCreateAccountBinding
 
 
@@ -27,7 +27,7 @@ class CreateAccount : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Create an instance of CreateAccountPresenter
-        val presenter = CreateAccountPresenter(this)
+        val presenter = CreateAccountPresenterImpl(this)
 
         binding.userEmail.setOnFocusChangeListener { view, hasFocus ->
             // Perform email validation when the email field loses focus

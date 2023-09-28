@@ -4,7 +4,7 @@ import android.view.View
 import androidx.navigation.NavController
 import bootcamp.cl.proyecto_agenda.DataBase.UserDao
 
-interface AccountPresenter {
+interface CreateAccountPresenter {
     /**
      * Creates a new user account with the provided email and password.
      * Navigates to the specified NavController upon completion.
@@ -26,7 +26,6 @@ interface AccountPresenter {
         uid:String,
         mail:String,
         name:String
-
     )
 
     /**
